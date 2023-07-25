@@ -1,6 +1,8 @@
 # Python-Trading
 A python trading algorithms with CCXT libraries to support crypto research and algorithmic performance
 
+DEFINITIONS:
+
 id: Each exchange has a default id. The id is not used for anything, it's a string literal for user-land exchange instance identification purposes. You can have multiple links to the same exchange and differentiate them by ids. Default ids are all lowercase and correspond to exchange names.
 
 name: This is a string literal containing the human-readable exchange name.

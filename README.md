@@ -21,12 +21,4 @@ has: This is an associative array of exchange capabilities (e.g fetchTickers, fe
 
 timeframes: An associative array of timeframes, supported by the fetchOHLCV method of the exchange. This is only populated when has['fetchOHLCV'] property is true.
 
-timeout: A timeout in milliseconds for a request-response roundtrip (default timeout is 10000 ms = 10 seconds). If the response is not received in that time, the library will throw an RequestTimeout exception. You can leave the default timeout value or set it to a reasonable value. Hanging forever with no timeout is not your option, for sure. You don't have to override this option in general case.
 
-rateLimit: A request rate limit in milliseconds. Specifies the required minimal delay between two consequent HTTP requests to the same exchange. The built-in rate-limiter is enabled by default and can be turned off by setting the enableRateLimit property to false.
-
-enableRateLimit: A boolean (true/false) value that enables the built-in rate limiter and throttles consecutive requests. This setting is true (enabled) by default. The user is required to implement own rate limiting or leave the built-in rate limiter enabled to avoid being banned from the exchange.
-
-userAgent: An object to set HTTP User-Agent header to. The ccxt library will set its User-Agent by default. Some exchanges may not like it. If you are having difficulties getting a reply from an exchange and want to turn User-Agent off or use the default one, set this value to false, undefined, or an empty string. The value of userAgent may be overrided by HTTP headers property below.
-
-headers: An associative array of HTTP headers and their values. Default value is empty {}. All headers will be prepended to all requests. If the User-Agent header is set within headers, it will override whatever value is set in the userAgent property above.

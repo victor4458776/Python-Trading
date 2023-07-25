@@ -4,6 +4,16 @@ logging.basicConfig(level=logging.DEBUG)
 
 # currencies: An associative array (a dict) of currencies by codes (usually 3 or 4 letters) available with an exchange. 
 # Currencies are loaded and reloaded from markets.
+# Python
+
+# enable built-in rate limiting upon instantiation of the exchange
+exchange = ccxt.bitfinex({
+    # 'enableRateLimit': True,  # enabled by default
+})
+
+# or switch the built-in rate-limiter on or off later after instantiation
+exchange.enableRateLimit = True  # enable
+exchange.enableRateLimit = False  # disable
 
 # markets_by_id: An associative array of arrays of markets indexed by exchange-specific ids. 
 # Typically a length one array unless there are multiple markets with the same marketId. 

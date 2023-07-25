@@ -18,6 +18,18 @@ exchange.enableRateLimit = False  # disable
 # markets_by_id: An associative array of arrays of markets indexed by exchange-specific ids. 
 # Typically a length one array unless there are multiple markets with the same marketId. 
 # Markets should be loaded prior to accessing this property.
+# Python 3 (synchronous)
+if exchange.has['fetchOrder']:
+    order = exchange.fetch_order(id)
+    print(order)
+
+# Python 3.5+ asyncio (asynchronous)
+import asyncio
+import ccxt.async_support as ccxt
+if exchange.has['fetchOrder']:
+    order = asyncio.run(exchange.fetch_order(id))
+    print(order)
+
 
 # apiKey: This is your public API key string literal. Most exchanges require API keys setup.
 
